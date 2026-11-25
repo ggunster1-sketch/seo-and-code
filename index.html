@@ -291,83 +291,8 @@ Telegram-канал: @seo_and_code
 
 
 Мы используем файлы cookie для корректной работы сайта и аналитики. Продолжая пользоваться сайтом, вы соглашаетесь с этим.
-Понятно
-var TG_BOT_TOKEN = "9004929845:AAGcOOFVaEGbD2F2M-ydSSBqJ0omFon5Mkk";
-var TG_CHAT_ID = "926622208";
-var currentModalSource = 'Заявка с сайта';
-function toggleMenu() {
-var menu = document.getElementById('mobileMenu');
-if (menu) menu.classList.toggle('open');
-}
-function openModal(title) {
-currentModalSource = title || 'Заявка с сайта';
-document.getElementById('modalTitle').innerText = currentModalSource;
-document.getElementById('leadModal').classList.add('show');
-}
-function closeModal() {
-document.getElementById('leadModal').classList.remove('show');
-}
-function acceptCookies() {
-localStorage.setItem('webcode_cookie_ok', '1');
-document.getElementById('cookieBar').style.display = 'none';
-}
-if (localStorage.getItem('webcode_cookie_ok')) {
-document.getElementById('cookieBar').style.display = 'none';
-}
-function sendFormData(form, sourceName, quizDetails) {
-var inputs = form.querySelectorAll('input');
-var nameVal = '', phoneVal = '';
-for (var i = 0; i < inputs.length; i++) {
-if (inputs[i].type === 'text') nameVal = inputs[i].value;
-if (inputs[i].type === 'tel') phoneVal = inputs[i].value;
-}
-var btn = form.querySelector('button[type="submit"]');
-var oldText = btn ? btn.innerText : '';
-if (btn) { btn.disabled = true; btn.innerText = 'Отправка...'; }
-var message = "🔥 Новая заявка с сайта seo-and-code.ru\n\n📌 Форма: " + sourceName + "\n👤 Имя: " + nameVal + "\n📞 Контакт: " + phoneVal;
-if (quizDetails) message += "\n📝 Ответы квиза: " + quizDetails;
-fetch("telegram.org" + TG_BOT_TOKEN + "/sendMessage", {
-method: 'POST',
-headers: { 'Content-Type': 'application/json' },
-body: JSON.stringify({ chat_id: TG_CHAT_ID, text: message })
-})
-.then(function(r) { return r.json(); })
-.then(function(d) {
-if (d.ok) { alert('Спасибо! Заявка успешно отправлена.'); form.reset(); closeModal(); }
-else { alert('Напишите нам напрямую в Telegram: @nedurovv'); }
-})
-.catch(function() { alert('Напишите нам напрямую в Telegram: @nedurovv'); })
-.finally(function() { if (btn) { btn.disabled = false; btn.innerText = oldText; } });
-}
-function submitLead(e) { e.preventDefault(); sendFormData(e.target, currentModalSource, ''); }
-var quizSteps = [
-{ q: "Шаг 1 из 3. Какая задача стоит перед вашим бизнесом?", opts: ["Создать продающий лендинг с нуля", "Разработать многостраничный сайт с SEO", "Настроить и вести рекламу в Яндекс Директ", "Комплекс: Сайт + Реклама + Чат-бот"] },
-{ q: "Шаг 2 из 3. Где планируете привлекать клиентов?", opts: ["Приморский край (Владивосток, Большой Камень, Находка, Уссурийск)", "Конкретный город или регион России", "Вся Россия"] },
-{ q: "Шаг 3 из 3. Когда планируете запуск проекта?", opts: ["Срочно, в ближайшие 5–7 дней", "В течение 2–3 недель", "Пока изучаю варианты и цены"] }
-];
-var qStep = 0, qChoice = "", qHistory = [];
-function selectQuizOpt(i) { qChoice = quizSteps[qStep].opts[i]; renderQuiz(); }
-function nextQuizStep() {
-if (!qChoice) { alert('Выберите один из вариантов ответа'); return; }
-qHistory.push(qChoice); qChoice = ""; qStep++; renderQuiz();
-}
-function submitQuizForm(e) { e.preventDefault(); sendFormData(e.target, 'Квиз на главной', qHistory.join(' | ')); }
-function renderQuiz() {
-var content = document.getElementById('quizContent');
-var bar = document.getElementById('quizProgress');
-if (qStep < quizSteps.length) {
-bar.style.width = ((qStep + 1) / (quizSteps.length + 1) * 100) + '%';
-var item = quizSteps[qStep];
-var html = '' + item.q + '';
-for (var i = 0; i < item.opts.length; i++) {
-var cls = (qChoice === item.opts[i]) ? 'quiz-opt selected' : 'quiz-opt';
-html += '' + item.opts[i] + '';
-}
-html += 'Далее →';
-content.innerHTML = html;
-} else {
-bar.style.width = '100%';
-content.innerHTML = 'Расчет готов!Вы выбрали: ' + qHistory.join(' • ') + '.Согласен на обработку персональных данных (152-ФЗ).Получить расчет стоимости';
-}
-}
-renderQuiz();
+        <button type="button" class="btn btn-gold btn-sm" onclick="acceptCookies()">Понятно</button>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
