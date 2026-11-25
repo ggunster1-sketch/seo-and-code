@@ -1,4 +1,4 @@
-var MY_TELEGRAM = "nedurovv";
+var FORMSPREE_URL = "https://formspree.io/f/maeovbgd";
 var currentModalSource = "Заявка с сайта";
 
 function toggleMenu() {
@@ -34,18 +34,46 @@ function sendLead(form, source, details) {
         if (inputs[i].type === "tel") phoneVal = inputs[i].value;
     }
 
-    var text = "Здравствуйте! Оставляю заявку с сайта seo-and-code.ru\n" +
-               "Тема: " + source + "\n" +
-               "Имя: " + nameVal + "\n" +
-               "Телефон: " + phoneVal;
-    if (details) {
-        text += "\nПараметры: " + details;
+    var btn = form.querySelector("button[type='submit']");
+    var oldText = btn ? btn.innerText : "";
+    if (btn) {
+        btn.disabled = true;
+        btn.innerText = "Отправка...";
     }
 
-    var tgUrl = "https://t.me" + MY_TELEGRAM + "?text=" + encodeURIComponent(text);
-    window.open(tgUrl, "_blank");
-    form.reset();
-    closeModal();
+    var formData = new FormData();
+    formData.append("Тема", source);
+    formData.append("Имя", nameVal);
+    formData.append("Контакт", phoneVal);
+    if (details) {
+        formData.append("Квиз", details);
+    }
+
+    fetch(FORMSPREE_URL, {
+        method: "POST",
+        body: formData,
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    .then(function (r) {
+        if (r.ok) {
+            alert("Спасибо, " + nameVal + "! Заявка отправлена. Мы свяжемся с вами в ближайшее время.");
+            form.reset();
+            closeModal();
+        } else {
+            alert("Ошибка отправки. Пожалуйста, напишите нам в Telegram @nedurovv или на fixaxx2@mail.ru");
+        }
+    })
+    .catch(function () {
+        alert("Ошибка сети. Напишите нам напрямую в Telegram @nedurovv или позвоните +7-967-388-88-89");
+    })
+    .finally(function () {
+        if (btn) {
+            btn.disabled = false;
+            btn.innerText = oldText;
+        }
+    });
 }
 
 function submitLead(e) {
@@ -136,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "<input type='text' class='input' placeholder='Ваше имя' required>" +
                 "<input type='tel' class='input' placeholder='Телефон или @ник в Telegram' required>" +
                 "<label class='consent-label'><input type='checkbox' checked required><span>Согласен на обработку персональных данных (152-ФЗ).</span></label>" +
-                "<button type='submit' class='btn btn-gold btn-full'>Получить расчет в Telegram</button>" +
+                "<button type='submit' class='btn btn-gold btn-full'>Получить расчет стоимости</button>" +
                 "</form>";
         }
     }
