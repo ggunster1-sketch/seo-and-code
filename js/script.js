@@ -1,4 +1,4 @@
-var FORM_ACCESS_KEY = "7eb5f8fa-41ec-4462-8366-2e171193bc2e";
+var MY_TELEGRAM = "nedurovv";
 var currentModalSource = "Заявка с сайта";
 
 function toggleMenu() {
@@ -34,52 +34,18 @@ function sendLead(form, source, details) {
         if (inputs[i].type === "tel") phoneVal = inputs[i].value;
     }
 
-    var btn = form.querySelector("button[type='submit']");
-    var oldText = btn ? btn.innerText : "";
-    if (btn) {
-        btn.disabled = true;
-        btn.innerText = "Отправка...";
-    }
-
-    var payload = {
-        access_key: FORM_ACCESS_KEY,
-        subject: "Новая заявка с сайта seo-and-code.ru (" + source + ")",
-        from_name: "Сайт Веб-Код",
-        Имя: nameVal,
-        Контакт: phoneVal,
-        Форма: source
-    };
+    var text = "Здравствуйте! Оставляю заявку с сайта seo-and-code.ru\n" +
+               "Тема: " + source + "\n" +
+               "Имя: " + nameVal + "\n" +
+               "Телефон: " + phoneVal;
     if (details) {
-        payload.Ответы_квиза = details;
+        text += "\nПараметры: " + details;
     }
 
-    fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify(payload)
-    })
-    .then(function (r) { return r.json(); })
-    .then(function (d) {
-        if (d.success) {
-            alert("Спасибо! Заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.");
-            form.reset();
-            closeModal();
-        } else {
-            alert("Не удалось отправить. Напишите нам напрямую в Telegram: @nedurovv");
-        }
-    })
-    .catch(function () {
-        alert("Ошибка соединения. Напишите нам напрямую в Telegram: @nedurovv");
-    })
-    .finally(function () {
-        if (btn) {
-            btn.disabled = false;
-            btn.innerText = oldText;
-        }
-    });
+    var tgUrl = "https://t.me" + MY_TELEGRAM + "?text=" + encodeURIComponent(text);
+    window.open(tgUrl, "_blank");
+    form.reset();
+    closeModal();
 }
 
 function submitLead(e) {
@@ -170,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "<input type='text' class='input' placeholder='Ваше имя' required>" +
                 "<input type='tel' class='input' placeholder='Телефон или @ник в Telegram' required>" +
                 "<label class='consent-label'><input type='checkbox' checked required><span>Согласен на обработку персональных данных (152-ФЗ).</span></label>" +
-                "<button type='submit' class='btn btn-gold btn-full'>Получить расчет стоимости</button>" +
+                "<button type='submit' class='btn btn-gold btn-full'>Получить расчет в Telegram</button>" +
                 "</form>";
         }
     }
