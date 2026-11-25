@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройка и ведение Яндекс Директ под ключ — Студия «Веб‑Код»</title>
+    <meta name="description" content="Профессиональная настройка и ежемесячное ведение рекламы в Яндекс Директ (Поиск, РСЯ, Мастер кампаний, Ретаргетинг). Снижаем цену заявки и окупаем рекламный бюджет. Приморский край и вся Россия.">
+    <meta name="keywords" content="настройка Яндекс Директ под ключ, ведение Яндекс Директ ежемесячно, директолог, контекстная реклама для бизнеса, Веб-Код">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">ВЕБ‑<span>КОД</span></a>
+
+            <nav class="nav">
+                <a href="index.html">Главная</a>
+                <a href="sites.html">Сайты с нуля</a>
+                <a href="direct.html" class="active">Яндекс Директ</a>
+                <a href="bots.html">Чат-боты</a>
+                <a href="index.html#tariffs">Тарифы</a>
+                <a href="index.html#quiz">Расчет цены</a>
+            </nav>
+
+            <div class="header-contacts">
+                <a href="tel:+79673888889" class="header-phone">+7-967-388-88-89</a>
+                <button type="button" class="btn btn-gold btn-sm" onclick="openModal('Заказать настройку Яндекс Директ')">Заказать рекламу</button>
+                <button type="button" class="burger-btn" onclick="toggleMenu()" aria-label="Меню">☰</button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" onclick="toggleMenu()">Главная</a>
+            <a href="sites.html" onclick="toggleMenu()">Сайты с нуля</a>
+            <a href="direct.html" onclick="toggleMenu()">Яндекс Директ</a>
+            <a href="bots.html" onclick="toggleMenu()">Чат-боты</a>
+            <a href="index.html#tariffs" onclick="toggleMenu()">Тарифы</a>
+            <a href="tel:+79673888889" style="color: #F59E0B; font-weight: bold;">Позвонить: +7-967-388-88-89</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">Поиск • РСЯ • Ретаргетинг • Яндекс Метрика</div>
+            <h1>Настройка и ежемесячное ведение <span>Яндекс Директ</span> под ключ</h1>
+            <p class="hero-lead">Приводим целевых клиентов, готовых купить ваш товар или услугу прямо сейчас. Глубоко прорабатываем семантику, отсекаем мусорный трафик и ежедневно оптимизируем ставки для снижения стоимости заявки.</p>
+            
+            <div class="hero-actions">
+                <button type="button" class="btn btn-gold" onclick="openModal('Бесплатный аудит Яндекс Директ')">Получить аудит и прогноз заявок</button>
+                <a href="https://t.me" target="_blank" rel="noopener" class="btn btn-dark">Обсудить в Telegram</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Форматы работы с рекламой</h2>
+            <p class="section-subtitle">Вы можете заказать как разовую настройку кампаний с нуля, так и полное ежемесячное ведение с гарантией контроля бюджета.</p>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div>
+                        <span class="card-num">ТАРИФ 01</span>
+                        <h3>Настройка под ключ (Разово)</h3>
+                        <p>Идеально для запуска нового направления. Собираем ключи, пишем цепляющие объявления, настраиваем цели в Метрике и передаем готовый кабинет вам.</p>
+                        <div class="price" style="font-size: 22px;">от 15 000 ₽</div>
+                        <ul class="check-list">
+                            <li>Сбор целевых запросов и минус-слов</li>
+                            <li>Настройка Поиска и РСЯ</li>
+                            <li>Подключение целей Яндекс Метрики</li>
+                            <li>2 недели бесплатного контроля после запуска</li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn btn-dark btn-full" onclick="openModal('Заказ: Разовая настройка Директ')">Заказать настройку</button>
+                </div>
+
+                <div class="card tariff-featured">
+                    <div class="tariff-tag">Максимальный результат</div>
+                    <div>
+                        <span class="card-num">ТАРИФ 02</span>
+                        <h3>Настройка + Ежемесячное ведение</h3>
+                        <p>Полное управление вашей рекламой. Регулярно чистим площадки, тестируем новые связки и масштабируем только те объявления, которые приносят продажи.</p>
+                        <div class="price" style="font-size: 22px;">от 25 000 ₽ / мес</div>
+                        <ul class="check-list">
+                            <li>Всё из тарифа «Настройка под ключ»</li>
+                            <li>Ежедневный мониторинг ставок и бюджета</li>
+                            <li>Чистка неэффективных площадок РСЯ</li>
+                            <li>Еженедельные понятные отчеты по заявкам</li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn btn-gold btn-full" onclick="openModal('Заказ: Ведение Яндекс Директ')">Заказать ведение</button>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-num">ТАРИФ 03</span>
+                        <h3>Связка «Быстрый сайт + Директ»</h3>
+                        <p>Если у вас еще нет сайта или текущий плохо конвертирует — создадим легкий лендинг на чистом коде и сразу запустим на него горячий трафик.</p>
+                        <div class="price" style="font-size: 22px;">от 35 000 ₽</div>
+                        <ul class="check-list">
+                            <li>Продающий лендинг без конструкторов</li>
+                            <li>Интерактивный квиз для роста конверсии</li>
+                            <li>Настройка Яндекс Директ под ключ</li>
+                            <li>Мгновенная отправка заявок в Telegram</li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn btn-dark btn-full" onclick="openModal('Заказ: Связка Сайт + Директ')">Заказать связку</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Как мы защищаем ваш бюджет от слива</h2>
+            <p class="section-subtitle">80% самостоятельных запусков теряют деньги в первые дни из-за широких настроек Яндекса. Мы исключаем эти ошибки на старте.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Жесткая фильтрация трафика</h3>
+                    <ul class="check-list" style="margin-bottom: 0;">
+                        <li>Прорабатываем базу из 500+ минус-слов до запуска (отсекаем «бесплатно», «своими руками», «скачать», «вакансии»)</li>
+                        <li>Разделяем кампании на Поиск и РСЯ, чтобы управлять ставками раздельно</li>
+                        <li>Отключаем показ рекламы в мобильных играх и мусорных приложениях</li>
+                        <li>Настраиваем корректировки ставок по полу, возрасту, устройствам и времени суток</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Прозрачная аналитика до каждой заявки</h3>
+                    <ul class="check-list" style="margin-bottom: 0;">
+                        <li>Настраиваем цели в Яндекс Метрике на отправку форм, прохождение квиза и клики по телефону</li>
+                        <li>Обучаем автостратегии Яндекса работать на реальные заявки, а не на пустые клики</li>
+                        <li>Показываем в отчетах: сколько потрачено, сколько получено обращений и цену каждого лида</li>
+                        <li>Регулярно обновляем заголовки и креативы для поддержания высокого CTR</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo" style="margin-bottom: 12px;">ВЕБ‑<span>КОД</span></a>
+                    <p>Создание сайтов на чистом коде без конструкторов, SEO-продвижение, Яндекс Директ и разработка чат-ботов.</p>
+                </div>
+
+                <div>
+                    <h4>Разделы сайта</h4>
+                    <a href="index.html">Главная</a>
+                    <a href="sites.html">Создание сайтов с нуля</a>
+                    <a href="direct.html">Яндекс Директ под ключ</a>
+                    <a href="bots.html">Разработка чат-ботов</a>
+                </div>
+
+                <div>
+                    <h4>Контакты для связи</h4>
+                    <a href="tel:+79673888889">Тел: +7-967-388-88-89</a>
+                    <a href="mailto:fixaxx2@mail.ru">Email: fixaxx2@mail.ru</a>
+                    <a href="https://t.me" target="_blank" rel="noopener">Личный Telegram: @nedurovv</a>
+                    <a href="https://t.me" target="_blank" rel="noopener">Telegram-канал: @seo_and_code</a>
+                </div>
+
+                <div>
+                    <h4>Правовая информация</h4>
+                    <p>Самозанятый Козин Артём Игоревич</p>
+                    <p>ИНН: 254303011920</p>
+                    <a href="privacy.html" style="color: #F59E0B;">Политика конфиденциальности (152-ФЗ)</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 Веб‑Код. Все права защищены.</span>
+Приморский край и вся Россия
+
+
+Заказать рекламу
+Оставьте контакты — рассчитаем бюджет и прогноз заявок для вашей ниши.
+Отправить заявку
+Закрыть
+
+
+Мы используем файлы cookie для корректной работы сайта и аналитики. Продолжая пользоваться сайтом, вы соглашаетесь с этим.
+Понятно
