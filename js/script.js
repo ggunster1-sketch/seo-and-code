@@ -1,5 +1,4 @@
-var TG_BOT_TOKEN = "9004929845:AAGcOOFVaEGbD2F2M-ydSSBqJ0omFon5Mkk";
-var TG_CHAT_ID = "926622208";
+var FORM_ACCESS_KEY = "7eb5f8fa-41ec-4462-8366-2e171193bc2e";
 var currentModalSource = "Заявка с сайта";
 
 function toggleMenu() {
@@ -26,7 +25,7 @@ function acceptCookies() {
     if (b) b.style.display = "none";
 }
 
-function sendToTelegram(form, source, details) {
+function sendLead(form, source, details) {
     var inputs = form.querySelectorAll("input");
     var nameVal = "";
     var phoneVal = "";
@@ -42,36 +41,38 @@ function sendToTelegram(form, source, details) {
         btn.innerText = "Отправка...";
     }
 
-    var text = "Новая заявка с сайта seo-and-code.ru\n" +
-               "Форма: " + source + "\n" +
-               "Имя: " + nameVal + "\n" +
-               "Контакт: " + phoneVal;
+    var payload = {
+        access_key: FORM_ACCESS_KEY,
+        subject: "Новая заявка с сайта seo-and-code.ru (" + source + ")",
+        from_name: "Сайт Веб-Код",
+        Имя: nameVal,
+        Контакт: phoneVal,
+        Форма: source
+    };
     if (details) {
-        text += "\nКвиз: " + details;
+        payload.Ответы_квиза = details;
     }
 
-    var apiUrl = "https://api." + "telegram.org/bot" + TG_BOT_TOKEN + "/sendMessage";
-
-    fetch(apiUrl, {
+    fetch("https://web3forms.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            chat_id: TG_CHAT_ID,
-            text: text
-        })
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
     })
     .then(function (r) { return r.json(); })
     .then(function (d) {
-        if (d.ok) {
-            alert("Спасибо! Заявка отправлена. Мы свяжемся с вами в ближайшее время.");
+        if (d.success) {
+            alert("Спасибо! Заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.");
             form.reset();
             closeModal();
         } else {
-            alert("Ошибка отправки: " + (d.description || "напишите в Telegram @nedurovv"));
+            alert("Не удалось отправить. Напишите нам напрямую в Telegram: @nedurovv");
         }
     })
     .catch(function () {
-        alert("Ошибка сети. Напишите нам напрямую в Telegram: @nedurovv");
+        alert("Ошибка соединения. Напишите нам напрямую в Telegram: @nedurovv");
     })
     .finally(function () {
         if (btn) {
@@ -83,7 +84,7 @@ function sendToTelegram(form, source, details) {
 
 function submitLead(e) {
     e.preventDefault();
-    sendToTelegram(e.target, currentModalSource, "");
+    sendLead(e.target, currentModalSource, "");
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -145,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.submitQuizForm = function (e) {
         e.preventDefault();
-        sendToTelegram(e.target, "Квиз на главной", answers.join(" | "));
+        sendLead(e.target, "Квиз на главной", answers.join(" | "));
     };
 
     function drawQuiz() {
