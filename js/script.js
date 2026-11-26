@@ -50,7 +50,7 @@ function sendLead(form, source, details) {
 
     var nameVal = nameInput ? nameInput.value.trim() : "";
     var phoneVal = phoneInput ? phoneInput.value.trim() : "";
-    var methodVal = methodSelect ? methodSelect.value : "Не указан (по контакту)";
+    var methodVal = methodSelect ? methodSelect.value : "Не указан";
 
     var btn = form.querySelector("button[type='submit']");
     var oldText = btn ? btn.innerText : "";
@@ -59,40 +59,53 @@ function sendLead(form, source, details) {
         btn.innerText = "Отправка...";
     }
 
-    var formData = new FormData();
-    formData.append("Источник_заявки", source);
-    formData.append("Имя_клиента", nameVal);
-    formData.append("Контакт_клиента", phoneVal);
-    formData.append("Как_удобнее_связаться", methodVal);
-    if (details) {
-        formData.append("Выбранные_параметры_квиза", details);
+    var iframeName = "hidden_lead_frame";
+    var iframe = document.getElementById(iframeName);
+    if (!iframe) {
+        iframe = document.createElement("iframe");
+        iframe.id = iframeName;
+        iframe.name = iframeName;
+        iframe.style.display = "none";
+        document.body.appendChild(iframe);
     }
 
-    fetch(FORMSPREE_URL, {
-        method: "POST",
-        body: formData,
-        headers: {
-            "Accept": "application/json"
-        }
-    })
-    .then(function (r) {
-        if (r.ok) {
-            alert("Спасибо, " + nameVal + "! Заявка принята. Мы изучим ваши параметры и свяжемся выбранным способом.");
-            form.reset();
-            closeModal();
-        } else {
-            alert("Не удалось отправить заявку автоматически. Пожалуйста, позвоните нам +7-967-388-88-89 или напишите на fixaxx2@mail.ru");
-        }
-    })
-    .catch(function () {
-        alert("Ошибка соединения. Пожалуйста, позвоните нам +7-967-388-88-89 или напишите на fixaxx2@mail.ru");
-    })
-    .finally(function () {
+    var tempForm = document.createElement("form");
+    tempForm.action = FORMSPREE_URL;
+    tempForm.method = "POST";
+    tempForm.target = iframeName;
+    tempForm.style.display = "none";
+
+    var fields = {
+        "Источник_заявки": source,
+        "Имя_клиента": nameVal,
+        "Контакт_клиента": phoneVal,
+        "Как_удобнее_связаться": methodVal
+    };
+    if (details) {
+        fields["Ответы_квиза"] = details;
+    }
+
+    for (var key in fields) {
+        var inp = document.createElement("input");
+        inp.type = "hidden";
+        inp.name = key;
+        inp.value = fields[key];
+        tempForm.appendChild(inp);
+    }
+
+    document.body.appendChild(tempForm);
+    tempForm.submit();
+
+    setTimeout(function () {
+        document.body.removeChild(tempForm);
         if (btn) {
             btn.disabled = false;
             btn.innerText = oldText;
         }
-    });
+        alert("Спасибо, " + nameVal + "! Заявка принята. Мы свяжемся с вами выбранным способом (" + methodVal + ").");
+        form.reset();
+        closeModal();
+    }, 800);
 }
 
 function submitLead(e) {
