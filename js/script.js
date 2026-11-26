@@ -104,7 +104,7 @@ function sendLead(form, source, details) {
             btn.disabled = false;
             btn.innerText = oldText;
         }
-        alert("Спасибо, " + nameVal + "! Заявка принята. Мы свяжемся с вами выбранным способом (" + methodVal + ").");
+        alert("Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.");
         form.reset();
         closeModal();
     }, 800);
