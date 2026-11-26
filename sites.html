@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Создание сайтов без конструкторов с нуля под ключ — Студия «Веб‑Код»</title>
-    <meta name="description" content="Разработка быстрых продающих сайтов на чистом коде без Tilda и шаблонов. Высокая скорость загрузки, базовая SEO-оптимизация, адаптив под все устройства. Приморский край и вся Россия.">
-    <meta name="keywords" content="создание сайтов без конструкторов, сайт на чистом коде, разработка лендинга с нуля, заказать многостраничный сайт, Веб-Код">
+    <title>Создание сайтов с нуля без конструкторов от 15 000 ₽ — Веб‑Код</title>
+    <meta name="description" content="Разработка сайтов на чистом коде: сайт-визитка от 15 000 ₽, продающий лендинг от 28 000 ₽, многостраничный сайт под ТОП поиска от 55 000 ₽. Подключение онлайн-оплаты СБП и CRM.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <header class="header">
         <div class="container header-inner">
             <a href="index.html" class="logo">ВЕБ‑<span>КОД</span></a>
-
             <nav class="nav">
                 <a href="index.html">Главная</a>
                 <a href="sites.html" class="active">Сайты с нуля</a>
@@ -22,126 +19,139 @@
                 <a href="index.html#tariffs">Тарифы</a>
                 <a href="index.html#quiz">Расчет цены</a>
             </nav>
-
             <div class="header-contacts">
                 <a href="tel:+79673888889" class="header-phone">+7-967-388-88-89</a>
-                <button type="button" class="btn btn-gold btn-sm" onclick="openModal('Заказать разработку сайта')">Заказать сайт</button>
+                <button type="button" class="btn btn-gold btn-sm" onclick="openModal('Заказ сайта')">Заказать звонок</button>
                 <button type="button" class="burger-btn" onclick="toggleMenu()" aria-label="Меню">☰</button>
             </div>
         </div>
-
         <div class="mobile-menu" id="mobileMenu">
             <a href="index.html" onclick="toggleMenu()">Главная</a>
             <a href="sites.html" onclick="toggleMenu()">Сайты с нуля</a>
             <a href="direct.html" onclick="toggleMenu()">Яндекс Директ</a>
             <a href="bots.html" onclick="toggleMenu()">Чат-боты</a>
-            <a href="index.html#tariffs" onclick="toggleMenu()">Тарифы</a>
+            <a href="index.html#quiz" onclick="toggleMenu()">Расчет стоимости</a>
             <a href="tel:+79673888889" style="color: #F59E0B; font-weight: bold;">Позвонить: +7-967-388-88-89</a>
         </div>
     </header>
-
     <section class="hero">
-        <div class="container">
-            <div class="hero-badge">Разработка на чистом коде • HTML / CSS / JS / PHP</div>
-            <h1>Разработка сайтов с нуля <span>без конструкторов</span> и абонентской платы</h1>
-            <p class="hero-lead">Создаем индивидуальные лендинги, корпоративные сайты и информационные порталы, которые открываются за доли секунды, легко продвигаются в Яндексе и принадлежат только вам.</p>
-            
-            <div class="hero-actions">
-                <button type="button" class="btn btn-gold" onclick="openModal('Расчет стоимости сайта')">Обсудить ваш сайт</button>
-                <a href="https://t.me" target="_blank" rel="noopener" class="btn btn-dark">Задать вопрос в Telegram</a>
+        <div class="container hero-grid">
+            <div>
+                <div class="hero-badge">Разработка сайтов на чистом коде без конструкторов</div>
+                <h1>Быстрые сайты <span>с нуля</span>: от визитки за 15 000 ₽ до портала под ТОП поиска</h1>
+                <p class="hero-lead">Никакой ежемесячной абонентской платы за конструктор и тормозящих шаблонов. Чистая верстка, мгновенная загрузка за 0.4 сек, готовность к SEO и рекламе с первого дня.</p>
+                <div class="hero-actions">
+                    <button type="button" class="btn btn-gold" onclick="openModal('Обсудить разработку сайта')">Рассчитать свой сайт</button>
+                    <a href="#formats" class="btn btn-dark">Смотреть форматы и цены</a>
+                </div>
+            </div>
+            <div class="hero-showcase">
+                <div class="showcase-top">
+                    <div class="showcase-dots"><span></span><span></span><span></span></div>
+                    <span class="showcase-status">● Сайт готов к продажам</span>
+                </div>
+                <div class="showcase-item">
+                    <span class="showcase-label">Скорость загрузки (Google Speed)</span>
+                    <span class="showcase-val">99 / 100 (0.4 сек)</span>
+                </div>
+                <div class="showcase-item">
+                    <span class="showcase-label">Абонентская плата за платформу</span>
+                    <span class="showcase-val">0 ₽ / мес навсегда</span>
+                </div>
+                <div class="showcase-item">
+                    <span class="showcase-label">Оформление и закрывающие документы</span>
+                    <span class="showcase-val">Договор + Чек НПД</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section section-alt">
+    <section id="formats" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Какие сайты мы создаем</h2>
-            <p class="section-subtitle">Подбираем структуру и функционал строго под задачи вашего бизнеса и источник трафика.</p>
-
+            <h2 class="section-title">Форматы и среднерыночные цены</h2>
+            <p class="section-subtitle">Фиксируем точную смету и сроки до старта работ. Работаем по договору от самозанятого с выдачей официального чека.</p>
             <div class="grid-3">
                 <div class="card">
                     <div>
-                        <span class="card-num">ФОРМАТ 01</span>
-                        <h3>Продающий лендинг (Landing Page)</h3>
-                        <p>Одностраничный сайт, заточенный под быстрый запуск рекламы в Яндекс Директ. Включает сильные смыслы, интерактивный квиз-калькулятор и формы захвата заявок.</p>
+                        <span class="card-num">01 / БЫСТРЫЙ СТАРТ</span>
+                        <h3>Сайт-визитка / Базовый лендинг</h3>
+                        <p>Аккуратный сайт на 1–3 экрана для презентации услуг и прямого приема звонков и обращений без сложных форм.</p>
+                        <div class="price">от 15 000 ₽</div>
+                        <ul class="check-list">
+                            <li>Чистый код без конструкторов</li>
+                            <li>Адаптация под смартфоны и ПК</li>
+                            <li>Прямые кнопки связи в 1 клик</li>
+                            <li>Базовая настройка мета-тегов и SSL</li>
+                        </ul>
                     </div>
-                    <div class="price" style="font-size: 22px; margin-bottom: 14px;">от 25 000 ₽</div>
-                    <button type="button" class="btn btn-dark btn-full" onclick="openModal('Заказ: Продающий лендинг')">Заказать лендинг</button>
+                    <button type="button" class="btn btn-dark btn-full" onclick="openModal('Заказ: Сайт-визитка от 15 000 ₽')">Заказать визитку</button>
                 </div>
 
                 <div class="card tariff-featured">
-                    <div class="tariff-tag">Для SEO и рекламы</div>
+                    <div class="tariff-tag">Хит продаж</div>
                     <div>
-                        <span class="card-num">ФОРМАТ 02</span>
+                        <span class="card-num">02 / ДЛЯ РЕКЛАМЫ</span>
+                        <h3>Продающий лендинг под ключ</h3>
+                        <p>Полноценная посадочная страница с высокой конверсией для запуска рекламы в Яндекс Директ и сбора заявок.</p>
+                        <div class="price">от 28 000 ₽</div>
+                        <ul class="check-list">
+                            <li>Продающая структура и смыслы</li>
+                            <li>Интерактивный квиз-калькулятор</li>
+                            <li>Формы захвата и виджет связи 24/7</li>
+                            <li>Яндекс Метрика и соответствие 152-ФЗ</li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn btn-gold btn-full" onclick="openModal('Заказ: Продающий лендинг от 28 000 ₽')">Заказать лендинг</button>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-num">03 / ДЛЯ ПОИСКА</span>
                         <h3>Многостраничный сайт компании</h3>
-                        <p>Полноценный ресурс с отдельными страницами под каждую услугу или город. Идеально подходит для выхода в ТОП органического поиска Яндекса и Google.</p>
+                        <p>Полноценный ресурс с отдельными страницами под каждую услугу для выхода в ТОП Яндекса и Google по ключевым запросам.</p>
+                        <div class="price">от 55 000 ₽</div>
+                        <ul class="check-list">
+                            <li>Главная + страницы под все услуги</li>
+                            <li>Глубокая SEO-структура H1–H3</li>
+                            <li>Микроразметка Schema.org для сниппетов</li>
+                            <li>Подключение Яндекс Вебмастер и Sitemap</li>
+                        </ul>
                     </div>
-                    <div class="price" style="font-size: 22px; margin-bottom: 14px;">от 45 000 ₽</div>
-                    <button type="button" class="btn btn-gold btn-full" onclick="openModal('Заказ: Многостраничный сайт')">Заказать сайт компании</button>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <span class="card-num">ФОРМАТ 03</span>
-                        <h3>Портал или каталог услуг</h3>
-                        <p>Масштабируемый проект со сложной структурой разделов, фильтрами, подключением баз данных и интеграцией с Telegram-ботами.</p>
-                    </div>
-                    <div class="price" style="font-size: 22px; margin-bottom: 14px;">от 80 000 ₽</div>
-                    <button type="button" class="btn btn-dark btn-full" onclick="openModal('Заказ: Портал / Каталог')">Обсудить проект</button>
+                    <button type="button" class="btn btn-dark btn-full" onclick="openModal('Заказ: Многостраничный сайт от 55 000 ₽')">Заказать многостраничник</button>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="section">
+    <section id="modules" class="section">
         <div class="container">
-            <h2 class="section-title">Что вы получаете при сдаче проекта</h2>
-            <p class="section-subtitle">Мы сдаем не просто «картинку в интернете», а готовый к приему трафика инструмент продаж.</p>
-
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Техническое совершенство и скорость</h3>
-                    <ul class="check-list" style="margin-bottom: 0;">
-                        <li>Адаптивная верстка: ничего не съезжает на iPhone, Android, планшетах и широких мониторах</li>
-                        <li>Мгновенная загрузка страниц (95–100 баллов по тестам скорости)</li>
-                        <li>Защита форм от спам-ботов и мгновенная отправка заявок вам в Telegram</li>
-                        <li>Полное соответствие законам РФ (152-ФЗ, политика конфиденциальности, cookie)</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3>SEO-подготовка и запуск под ключ</h3>
-                    <ul class="check-list" style="margin-bottom: 0;">
-                        <li>Уникальные мета-теги (Title, Description) и семантическая разметка заголовков H1–H3</li>
-                        <li>Настройка файлов robots.txt и sitemap.xml для быстрой индексации</li>
-                        <li>Подключение счетчиков Яндекс Метрики с настройкой целей на кнопки и формы</li>
-                        <li>Помощь с регистрацией домена, российского хостинга и выпуском SSL-сертификата</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Как строится разработка</h2>
-            <p class="section-subtitle">Понятный пошаговый процесс без затягивания сроков и технических сложностей для вас.</p>
-
+            <h2 class="section-title">Дополнительные модули и современные технологии</h2>
+            <p class="section-subtitle">Усиливаем ваш сайт проверенными российскими сервисами для автоматизации продаж и приема платежей.</p>
             <div class="grid-3">
                 <div class="card">
-                    <span class="card-num">ЭТАП 1 • 1–2 ДНЯ</span>
-                    <h3>Анализ ниши и структура</h3>
-                    <p>Изучаем ваших конкурентов, формируем сильное торговое предложение, продумываем логику блоков и квиза, чтобы посетитель оставлял заявку.</p>
+                    <div>
+                        <span class="card-num">ЭКВАЙРИНГ И СБП</span>
+                        <h3>Онлайн-оплата на сайте — от 7 000 ₽</h3>
+                        <p>Подключаем прием банковских карт РФ и оплату по QR через СБП (ЮKassa, Т-Банк Касса, Robokassa, Продамус) с автоматической отправкой чеков клиентам по 54-ФЗ.</p>
+                    </div>
+                    <button type="button" class="btn btn-dark btn-sm" onclick="openModal('Подключение онлайн-оплаты СБП')">Подключить оплату</button>
                 </div>
+
                 <div class="card">
-                    <span class="card-num">ЭТАП 2 • 3–5 ДНЕЙ</span>
-                    <h3>Дизайн и чистая верстка</h3>
-                    <p>Создаем современный визуал в фирменных цветах, пишем чистый код, подключаем интерактивные элементы, формы обратной связи и адаптив.</p>
+                    <div>
+                        <span class="card-num">АВТОМАТИЗАЦИЯ 24/7</span>
+                        <h3>CRM-системы и виджеты — от 5 000 ₽</h3>
+                        <p>Интегрируем формы с Битрикс24, amoCRM и таблицами, устанавливаем онлайн-чаты и мульти-виджеты связи без VPN, чтобы ни один лид не потерялся.</p>
+                    </div>
+                    <button type="button" class="btn btn-dark btn-sm" onclick="openModal('Интеграция CRM и виджетов')">Настроить интеграцию</button>
                 </div>
+
                 <div class="card">
-                    <span class="card-num">ЭТАП 3 • 1 ДЕНЬ</span>
-                    <h3>Публикация и аналитика</h3>
-                    <p>Переносим сайт на ваш хостинг, привязываем домен, подключаем HTTPS, Яндекс Метрику, Вебмастер и тестируем прием заявок.</p>
+                    <div>
+                        <span class="card-num">СКОРОСТЬ И ПОИСК</span>
+                        <h3>Технический SEO-аудит — от 10 000 ₽</h3>
+                        <p>Исправляем ошибки индексации, ускоряем загрузку на смартфонах, настраиваем robots.txt, sitemap.xml, микроразметку и выводим в ТОП Яндекса и Google.</p>
+                    </div>
+                    <button type="button" class="btn btn-dark btn-sm" onclick="openModal('Заказ технического SEO-аудита')">Заказать аудит</button>
                 </div>
             </div>
         </div>
@@ -152,9 +162,8 @@
             <div class="footer-grid">
                 <div>
                     <a href="index.html" class="logo" style="margin-bottom: 12px;">ВЕБ‑<span>КОД</span></a>
-                    <p>Создание сайтов на чистом коде без конструкторов, SEO-продвижение, Яндекс Директ и разработка чат-ботов.</p>
+                    <p>Студия веб-разработки и performance-маркетинга. Сайты на чистом коде, Яндекс Директ, онлайн-оплата и чат-боты под ключ.</p>
                 </div>
-
                 <div>
                     <h4>Разделы сайта</h4>
                     <a href="index.html">Главная</a>
@@ -162,32 +171,64 @@
                     <a href="direct.html">Яндекс Директ под ключ</a>
                     <a href="bots.html">Разработка чат-ботов</a>
                 </div>
-
                 <div>
                     <h4>Контакты для связи</h4>
                     <a href="tel:+79673888889">Тел: +7-967-388-88-89</a>
                     <a href="mailto:fixaxx2@mail.ru">Email: fixaxx2@mail.ru</a>
-                    <a href="https://t.me" target="_blank" rel="noopener">Личный Telegram: @nedurovv</a>
                     <a href="https://t.me" target="_blank" rel="noopener">Telegram-канал: @seo_and_code</a>
                 </div>
-
                 <div>
-                    <h4>Правовая информация</h4>
-                    <p>Самозанятый Козин Артём Игоревич</p>
-                    <p>ИНН: 254303011920</p>
+                    <h4>Юридическая информация</h4>
+                    <p>Исполнитель: плательщик НПД (самозанятый) Козин Артём Игоревич</p>
+                    <p>ИНН: 254303011920 (договор и чек)</p>
                     <a href="privacy.html" style="color: #F59E0B;">Политика конфиденциальности (152-ФЗ)</a>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <span>© 2026 Веб‑Код. Все права защищены.</span>
+                <span>Приморский край и вся Россия</span>
+            </div>
+        </div>
+    </footer>
+    <div class="chat-widget">
+        <div class="chat-widget-menu" id="chatWidgetMenu">
+            <div class="chat-widget-title">Связь 24/7 (работает в РФ)</div>
+            <button type="button" class="chat-widget-link" onclick="openModal('Быстрая заявка с виджета')">⚡ Оставить заявку онлайн</button>
+            <a href="tel:+79673888889" class="chat-widget-link">📞 Позвонить: +7-967-388-88-89</a>
+            <a href="mailto:fixaxx2@mail.ru" class="chat-widget-link">✉️ Написать на Email</a>
+        </div>
+        <button type="button" class="chat-widget-btn" onclick="toggleChatWidget()" aria-label="Связаться с нами">💬</button>
+    </div>
 
-© 2026 Веб‑Код. Все права защищены.
-Приморский край и вся Россия
+    <div class="modal" id="leadModal">
+        <div class="modal-box">
+            <h3 id="modalTitle" style="font-size: 20px; margin-bottom: 6px; color: #FFFFFF;">Обсудить проект</h3>
+            <p style="color: #9CA3AF; font-size: 13.5px; margin-bottom: 16px;">Оставьте контакты — подготовим расчет и ответим выбранным способом.</p>
+            <form onsubmit="submitLead(event)">
+                <input type="text" class="input" placeholder="Ваше имя" required>
+                <input type="tel" class="input" placeholder="Телефон или ник в мессенджере" required>
+                <select class="select" required>
+                    <option value="" disabled selected>Как с вами удобнее связаться?</option>
+                    <option value="Позвонить по телефону">Позвонить по телефону</option>
+                    <option value="Написать ВКонтакте">Написать ВКонтакте</option>
+                    <option value="Написать в Telegram">Написать в Telegram</option>
+                    <option value="Отправить расчет на Email">Отправить расчет на Email</option>
+                </select>
+                <label class="consent-label">
+                    <input type="checkbox" required>
+                    <span>Я даю согласие на обработку персональных данных в соответствии с 152-ФЗ и <a href="privacy.html">Политикой конфиденциальности</a>.</span>
+                </label>
+                <button type="submit" class="btn btn-gold btn-full" style="margin-bottom: 8px;">Отправить заявку</button>
+                <button type="button" class="btn btn-dark btn-full" onclick="closeModal()">Закрыть</button>
+            </form>
+        </div>
+    </div>
 
+    <div class="cookie-bar" id="cookieBar">
+        <p>Мы используем cookie для работы сайта и аналитики. Продолжая, вы соглашаетесь с этим.</p>
+        <button type="button" class="btn btn-gold btn-cookie" onclick="acceptCookies()">Ок</button>
+    </div>
 
-Заказать сайт
-Оставьте контакты — обсудим задачу и рассчитаем точную стоимость.
-Отправить заявку
-Закрыть
-
-
-Мы используем файлы cookie для корректной работы сайта и аналитики. Продолжая пользоваться сайтом, вы соглашаетесь с этим.
-Понятно
+    <script src="js/script.js"></script>
+</body>
+</html>
