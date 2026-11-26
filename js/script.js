@@ -234,3 +234,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     drawQuiz();
 });
+document.addEventListener("DOMContentLoaded", function () {
+    var headerPhones = document.querySelectorAll(".header-phone");
+    for (var i = 0; i < headerPhones.length; i++) {
+        headerPhones[i].className = "btn btn-dark btn-sm";
+        headerPhones[i].innerHTML = "📞 Позвонить";
+        headerPhones[i].title = "+7-967-388-88-89";
+    }
+});
