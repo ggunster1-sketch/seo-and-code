@@ -860,3 +860,5 @@ padding: 8px 10px;
 font-size: 11px;
 }
 }
+.logo { white-space: nowrap; flex-shrink: 0; }
+.header-inner { flex-wrap: nowrap; }
