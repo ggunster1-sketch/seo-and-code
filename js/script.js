@@ -1,4 +1,4 @@
-var FORMSPREE_URL = "https://formspree.io/f/maeovbgd";
+var FORMSPREE_URL = "https://formspree.io";
 var currentModalSource = "Заявка с сайта";
 
 function toggleMenu() {
@@ -6,8 +6,26 @@ function toggleMenu() {
     if (m) m.classList.toggle("open");
 }
 
+function toggleChatWidget() {
+    var w = document.getElementById("chatWidgetMenu");
+    if (w) w.classList.toggle("open");
+}
+
+function toggleFaq(btn) {
+    var item = btn.parentElement;
+    if (item) {
+        item.classList.toggle("active");
+        var icon = btn.querySelector("span");
+        if (icon) {
+            icon.innerText = item.classList.contains("active") ? "−" : "+";
+        }
+    }
+}
+
 function openModal(title) {
     currentModalSource = title || "Заявка с сайта";
+    var w = document.getElementById("chatWidgetMenu");
+    if (w) w.classList.remove("open");
     var t = document.getElementById("modalTitle");
     var m = document.getElementById("leadModal");
     if (t) t.innerText = currentModalSource;
@@ -26,13 +44,13 @@ function acceptCookies() {
 }
 
 function sendLead(form, source, details) {
-    var inputs = form.querySelectorAll("input");
-    var nameVal = "";
-    var phoneVal = "";
-    for (var i = 0; i < inputs.length; i++) {
-        if (inputs[i].type === "text") nameVal = inputs[i].value;
-        if (inputs[i].type === "tel") phoneVal = inputs[i].value;
-    }
+    var nameInput = form.querySelector("input[type='text']");
+    var phoneInput = form.querySelector("input[type='tel']");
+    var methodSelect = form.querySelector("select");
+
+    var nameVal = nameInput ? nameInput.value.trim() : "";
+    var phoneVal = phoneInput ? phoneInput.value.trim() : "";
+    var methodVal = methodSelect ? methodSelect.value : "Не указан (по контакту)";
 
     var btn = form.querySelector("button[type='submit']");
     var oldText = btn ? btn.innerText : "";
@@ -42,11 +60,12 @@ function sendLead(form, source, details) {
     }
 
     var formData = new FormData();
-    formData.append("Тема", source);
-    formData.append("Имя", nameVal);
-    formData.append("Контакт", phoneVal);
+    formData.append("Источник_заявки", source);
+    formData.append("Имя_клиента", nameVal);
+    formData.append("Контакт_клиента", phoneVal);
+    formData.append("Как_удобнее_связаться", methodVal);
     if (details) {
-        formData.append("Квиз", details);
+        formData.append("Выбранные_параметры_квиза", details);
     }
 
     fetch(FORMSPREE_URL, {
@@ -58,15 +77,15 @@ function sendLead(form, source, details) {
     })
     .then(function (r) {
         if (r.ok) {
-            alert("Спасибо, " + nameVal + "! Заявка отправлена. Мы свяжемся с вами в ближайшее время.");
+            alert("Спасибо, " + nameVal + "! Заявка принята. Мы изучим ваши параметры и свяжемся выбранным способом.");
             form.reset();
             closeModal();
         } else {
-            alert("Ошибка отправки. Пожалуйста, напишите нам в Telegram @nedurovv или на fixaxx2@mail.ru");
+            alert("Не удалось отправить заявку автоматически. Пожалуйста, позвоните нам +7-967-388-88-89 или напишите на fixaxx2@mail.ru");
         }
     })
     .catch(function () {
-        alert("Ошибка сети. Напишите нам напрямую в Telegram @nedurovv или позвоните +7-967-388-88-89");
+        alert("Ошибка соединения. Пожалуйста, позвоните нам +7-967-388-88-89 или напишите на fixaxx2@mail.ru");
     })
     .finally(function () {
         if (btn) {
@@ -92,28 +111,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var steps = [
         {
-            q: "Шаг 1 из 3. Какая задача стоит перед вашим бизнесом?",
+            q: "Шаг 1 из 4. Какая основная задача стоит перед проектом?",
             opts: [
-                "Создать продающий лендинг с нуля",
-                "Разработать многостраничный сайт с SEO",
-                "Настроить и вести рекламу в Яндекс Директ",
-                "Комплекс: Сайт + Реклама + Чат-бот"
+                "Сайт-визитка / базовый лендинг (от 15 000 ₽)",
+                "Продающий лендинг с квизом и SEO (от 28 000 ₽)",
+                "Многостраничный сайт под ТОП поиска (от 55 000 ₽)",
+                "Настройка и ведение Яндекс Директ (от 20 000 ₽)",
+                "Чат-бот для Telegram или ВКонтакте (от 15 000 ₽)",
+                "Комплекс: Сайт + Директ + Карты (от 65 000 ₽)"
             ]
         },
         {
-            q: "Шаг 2 из 3. Где планируете привлекать клиентов?",
+            q: "Шаг 2 из 4. Какие дополнительные модули потребуются?",
             opts: [
-                "Приморский край (Владивосток, Большой Камень, Находка, Уссурийск)",
+                "Базовый запуск (без сложных интеграций)",
+                "Подключить онлайн-оплату (СБП / карты ЮKassa / Т-Банк)",
+                "Упаковка и вывод в ТОП Яндекс Карт и 2ГИС",
+                "Интеграция с CRM-системой и онлайн-чатом 24/7"
+            ]
+        },
+        {
+            q: "Шаг 3 из 4. Где планируете привлекать клиентов?",
+            opts: [
+                "Приморский край (Большой Камень, Владивосток, Находка, Уссурийск)",
                 "Конкретный город или регион России",
                 "Вся Россия"
             ]
         },
         {
-            q: "Шаг 3 из 3. Когда планируете запуск проекта?",
+            q: "Шаг 4 из 4. Когда планируете старт работ?",
             opts: [
-                "Срочно, в ближайшие 5–7 дней",
-                "В течение 2–3 недель",
-                "Пока изучаю варианты и цены"
+                "Срочно, готовы начать в ближайшие 2–3 дня",
+                "В течение 1–2 недель",
+                "Пока прицениваемся и собираем предложения"
             ]
         }
     ];
@@ -129,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.nextQuizStep = function () {
         if (!choice) {
-            alert("Выберите один из вариантов ответа.");
+            alert("Пожалуйста, выберите один из вариантов ответа.");
             return;
         }
         answers.push(choice);
@@ -138,9 +168,17 @@ document.addEventListener("DOMContentLoaded", function () {
         drawQuiz();
     };
 
+    window.resetQuiz = function () {
+        step = 0;
+        choice = "";
+        answers = [];
+        drawQuiz();
+    };
+
     window.submitQuizForm = function (e) {
         e.preventDefault();
-        sendLead(e.target, "Квиз на главной", answers.join(" | "));
+        var summary = "1) Задача: " + answers[0] + " | 2) Модули: " + answers[1] + " | 3) Регион: " + answers[2] + " | 4) Сроки: " + answers[3];
+        sendLead(e.target, "Интерактивный квиз-калькулятор", summary);
     };
 
     function drawQuiz() {
@@ -148,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (step < steps.length) {
             if (bar) bar.style.width = ((step + 1) / (steps.length + 1) * 100) + "%";
             var cur = steps[step];
-            var html = "<h3 style='font-size:20px;margin-bottom:18px;'>" + cur.q + "</h3>";
+            var html = "<h3 style='font-size:19px;margin-bottom:16px;color:#FFFFFF;'>" + cur.q + "</h3>";
             for (var i = 0; i < cur.opts.length; i++) {
                 var cls = (choice === cur.opts[i]) ? "quiz-opt selected" : "quiz-opt";
                 html += "<div class='" + cls + "' onclick='selectQuizOpt(" + i + ")'>" + cur.opts[i] + "</div>";
@@ -158,13 +196,23 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             if (bar) bar.style.width = "100%";
             box.innerHTML =
-                "<h3 style='font-size:22px;color:#F59E0B;margin-bottom:10px;'>Расчет готов!</h3>" +
-                "<p style='color:#9CA3AF;font-size:14px;margin-bottom:18px;'>Вы выбрали: " + answers.join(" • ") + ". Укажите контакт:</p>" +
+                "<h3 style='font-size:21px;color:#F59E0B;margin-bottom:8px;'>Расчет сформирован!</h3>" +
+                "<p style='color:#9CA3AF;font-size:14px;margin-bottom:16px;'>Ваш выбор: <strong>" + answers.join(" • ") + "</strong></p>" +
                 "<form onsubmit='submitQuizForm(event)'>" +
                 "<input type='text' class='input' placeholder='Ваше имя' required>" +
-                "<input type='tel' class='input' placeholder='Телефон или @ник в Telegram' required>" +
-                "<label class='consent-label'><input type='checkbox' checked required><span>Согласен на обработку персональных данных (152-ФЗ).</span></label>" +
-                "<button type='submit' class='btn btn-gold btn-full'>Получить расчет стоимости</button>" +
+                "<input type='tel' class='input' placeholder='Телефон или ник в мессенджере' required>" +
+                "<select class='select' required>" +
+                "<option value='' disabled selected>Как с вами удобнее связаться?</option>" +
+                "<option value='Позвонить по телефону'>Позвонить по телефону</option>" +
+                "<option value='Написать ВКонтакте'>Написать ВКонтакте</option>" +
+                "<option value='Написать в Telegram'>Написать в Telegram</option>" +
+                "<option value='Отправить смету на Email'>Отправить смету на Email</option>" +
+                "</select>" +
+                "<label class='consent-label'><input type='checkbox' required><span>Я даю согласие на обработку персональных данных в соответствии с 152-ФЗ и <a href='privacy.html'>Политикой конфиденциальности</a>.</span></label>" +
+                "<div style='display:flex;gap:10px;flex-wrap:wrap;'>" +
+                "<button type='submit' class='btn btn-gold' style='flex:1;'>Получить смету и план работ</button>" +
+                "<button type='button' class='btn btn-dark' onclick='resetQuiz()'>Заново</button>" +
+                "</div>" +
                 "</form>";
         }
     }
