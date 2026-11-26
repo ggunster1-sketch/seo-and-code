@@ -1,4 +1,6 @@
-var FORMSPREE_URL = "https://formspree.io";
+var FORMSPREE_URL = "https://formspree.io" + "/f/maeovbgd";
+
+
 var currentModalSource = "Заявка с сайта";
 
 function toggleMenu() {
@@ -223,12 +225,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 "</select>" +
                 "<label class='consent-label'><input type='checkbox' required><span>Я даю согласие на обработку персональных данных в соответствии с 152-ФЗ и <a href='privacy.html'>Политикой конфиденциальности</a>.</span></label>" +
                 "<div style='display:flex;gap:10px;flex-wrap:wrap;'>" +
-                "<button type='submit' class='btn btn-gold' style='flex:1;'>Получить смету и план работ</button>" +
-                "<button type='button' class='btn btn-dark' onclick='resetQuiz()'>Заново</button>" +
-                "</div>" +
-                "</form>";
-        }
-    }
+                             "<button type='submit' class='btn btn-gold' style='flex:1;'>Получить смету и план работ</button>" +
+             "<button type='button' class='btn btn-dark' onclick='resetQuiz()'>Заново</button>" +
+             "</div>" +
+             "</form>";
+     }
+ }
 
     drawQuiz();
 });
