@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Разработка чат-ботов для Telegram и ВКонтакте под ключ — Студия «Веб‑Код»</title>
-    <meta name="description" content="Создание умных чат-ботов для Telegram и ВКонтакте на чистом коде. Прием заявок 24/7, квизы, автоворонки, интеграция с сайтом и уведомления в личку. Приморский край и вся Россия.">
-    <meta name="keywords" content="разработка телеграм ботов, заказать бота вконтакте, чат-бот под ключ, автоматизация заявок в мессенджерах, Веб-Код">
+    <title>Разработка чат-ботов от 15 000 ₽ и упаковка Яндекс Карт / 2ГИС — Веб‑Код</title>
+    <meta name="description" content="Создание чат-ботов для Telegram и ВКонтакте от 15 000 ₽ с приемом оплаты СБП и интеграцией CRM. Упаковка и вывод в ТОП на Яндекс Картах и 2ГИС от 10 000 ₽. Приморский край и РФ.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <header class="header">
         <div class="container header-inner">
             <a href="index.html" class="logo">ВЕБ‑<span>КОД</span></a>
-
             <nav class="nav">
                 <a href="index.html">Главная</a>
                 <a href="sites.html">Сайты с нуля</a>
@@ -22,114 +19,117 @@
                 <a href="index.html#tariffs">Тарифы</a>
                 <a href="index.html#quiz">Расчет цены</a>
             </nav>
-
             <div class="header-contacts">
                 <a href="tel:+79673888889" class="header-phone">+7-967-388-88-89</a>
-                <button type="button" class="btn btn-gold btn-sm" onclick="openModal('Заказать разработку бота')">Заказать бота</button>
+                <button type="button" class="btn btn-gold btn-sm" onclick="openModal('Заявка на чат-бота или карты')">Заказать звонок</button>
                 <button type="button" class="burger-btn" onclick="toggleMenu()" aria-label="Меню">☰</button>
             </div>
         </div>
-
         <div class="mobile-menu" id="mobileMenu">
             <a href="index.html" onclick="toggleMenu()">Главная</a>
             <a href="sites.html" onclick="toggleMenu()">Сайты с нуля</a>
             <a href="direct.html" onclick="toggleMenu()">Яндекс Директ</a>
             <a href="bots.html" onclick="toggleMenu()">Чат-боты</a>
-            <a href="index.html#tariffs" onclick="toggleMenu()">Тарифы</a>
+            <a href="index.html#quiz" onclick="toggleMenu()">Расчет стоимости</a>
             <a href="tel:+79673888889" style="color: #F59E0B; font-weight: bold;">Позвонить: +7-967-388-88-89</a>
         </div>
     </header>
 
     <section class="hero">
-        <div class="container">
-            <div class="hero-badge">Telegram • ВКонтакте • Интеграция с сайтом</div>
-            <h1>Разработка <span>чат-ботов</span> для приема заявок и автопродаж 24/7</h1>
-            <p class="hero-lead">Создаем надежных ботов на чистом коде без привязки к дорогим конструкторам. Бот мгновенно отвечает клиентам, проводит расчет стоимости, собирает контакты и присылает готовые заявки вам в личные сообщения.</p>
-            
-            <div class="hero-actions">
-                <button type="button" class="btn btn-gold" onclick="openModal('Обсудить логику чат-бота')">Заказать бота под ваш бизнес</button>
-                <a href="https://t.me" target="_blank" rel="noopener" class="btn btn-dark">Написать в Telegram</a>
+        <div class="container hero-grid">
+            <div>
+                <div class="hero-badge">Автоматизация заявок и локальный маркетинг</div>
+                <h1>Разработка <span>чат-ботов</span>, упаковка ВКонтакте, Яндекс Карт и 2ГИС</h1>
+                <p class="hero-lead">Превращаем мессенджеры и карты в круглосуточный отдел продаж: бот отвечает клиенту за 1 секунду, принимает оплату и передаёт горячую заявку менеджеру без вашего участия.</p>
+                <div class="hero-actions">
+                    <button type="button" class="btn btn-gold" onclick="openModal('Обсудить разработку чат-бота')">Заказать чат-бота</button>
+                    <a href="#bots-prices" class="btn btn-dark">Смотреть решения и цены</a>
+                </div>
+            </div>
+            <div class="hero-showcase">
+                <div class="showcase-top">
+                    <div class="showcase-dots"><span></span><span></span><span></span></div>
+                    <span class="showcase-status">● Автоворонка 24/7 запущена</span>
+                </div>
+                <div class="showcase-item">
+                    <span class="showcase-label">Скорость ответа клиенту</span>
+                    <span class="showcase-val">Мгновенно (24/7)</span>
+                </div>
+                <div class="showcase-item">
+                    <span class="showcase-label">Прием платежей в боте</span>
+                    <span class="showcase-val">СБП / ЮKassa / 54-ФЗ</span>
+                </div>
+                <div class="showcase-item">
+                    <span class="showcase-label">Оформление услуг</span>
+                    <span class="showcase-val">Договор + Чек НПД</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section section-alt">
+    <section id="bots-prices" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Какие задачи решают наши боты</h2>
-            <p class="section-subtitle">Автоматизируем рутину, чтобы вы не теряли клиентов, которые пишут вечером, в выходные или пока вы заняты.</p>
-
+            <h2 class="section-title">Решения и среднерыночные цены</h2>
+            <p class="section-subtitle">Настраиваем надежные сценарии, которые стабильно работают в России и помогают собирать клиентов без лишних затрат на рекламу.</p>
             <div class="grid-3">
                 <div class="card">
                     <div>
-                        <span class="card-num">РЕШЕНИЕ 01</span>
-                        <h3>Бот-консультант и квиз</h3>
-                        <p>Задает клиенту 3–5 уточняющих вопросов, рассчитывает предварительную стоимость услуги, забирает номер телефона и сразу отправляет заявку менеджеру.</p>
+                        <span class="card-num">01 / TELEGRAM И ВКОНТАКТЕ</span>
+                        <h3>Чат-бот для приема заявок</h3>
+                        <p>Удобный навигатор по вашим услугам, расчет стоимости по кнопкам и мгновенная отправка контактов клиента вам.</p>
+                        <div class="price">от 15 000 ₽</div>
+                        <ul class="check-list">
+                            <li>Интерактивное меню услуг и прайс-лист</li>
+                            <li>Квиз-опрос для квалификации клиента</li>
+                            <li>Мгновенные уведомления о новых заявках</li>
+                            <li>Передача проекта на ваш аккаунт</li>
+                        </ul>
                     </div>
-                    <div class="price" style="font-size: 22px; margin-bottom: 14px;">от 12 000 ₽</div>
-                    <button type="button" class="btn btn-dark btn-full" onclick="openModal('Заказ: Бот-консультант')">Заказать решение</button>
+                    <button type="button" class="btn btn-dark btn-full" onclick="openModal('Заказ: Чат-бот для заявок (от 15 000 ₽)')">Заказать бота</button>
                 </div>
 
                 <div class="card tariff-featured">
-                    <div class="tariff-tag">Хит для бизнеса</div>
+                    <div class="tariff-tag">Максимум продаж</div>
                     <div>
-                        <span class="card-num">РЕШЕНИЕ 02</span>
-                        <h3>Автоворонка и каталог услуг</h3>
-                        <p>Полноценное меню внутри Telegram или сообщества ВКонтакте: презентация услуг, прайс-лист, портфолио, запись на консультацию и рассылка по базе.</p>
+                        <span class="card-num">02 / ВОРОНКА + ПЛАТЕЖИ</span>
+                        <h3>Бот с автоворонкой и оплатой</h3>
+                        <p>Полноценный цифровой менеджер: прогревает клиента серией сообщений, принимает оплату и записывает на услуги.</p>
+                        <div class="price">от 28 000 ₽</div>
+                        <ul class="check-list">
+                            <li>Сценарий прогрева и дожима до покупки</li>
+                            <li>Подключение онлайн-оплаты СБП и карт (54-ФЗ)</li>
+                            <li>Интеграция с Битрикс24, amoCRM или таблицами</li>
+                            <li>Сегментация базы и рассылки по подписчикам</li>
+                        </ul>
                     </div>
-                    <div class="price" style="font-size: 22px; margin-bottom: 14px;">от 22 000 ₽</div>
-                    <button type="button" class="btn btn-gold btn-full" onclick="openModal('Заказ: Бот-автоворонка')">Заказать автоворонку</button>
+                    <button type="button" class="btn btn-gold btn-full" onclick="openModal('Заказ: Бот с автоворонкой и оплатой (от 28 000 ₽)')">Заказать воронку</button>
                 </div>
 
                 <div class="card">
                     <div>
-                        <span class="card-num">РЕШЕНИЕ 03</span>
-                        <h3>Связка «Сайт + Бот уведомлений»</h3>
-                        <p>Подключаем формы вашего сайта к Telegram: любая заявка с лендинга или квиза за 1 секунду прилетает в ваш рабочий чат с именем и телефоном клиента.</p>
+                        <span class="card-num">03 / ГЕО-МАРКЕТИНГ И ВК</span>
+                        <h3>Яндекс Карты, 2ГИС и ВК</h3>
+                        <p>Упаковка коммерческого присутствия в регионе: приводим горячих клиентов из поиска на картах без оплаты за каждый клик.</p>
+                        <div class="price">от 10 000 ₽</div>
+                        <ul class="check-list">
+                            <li>Регистрация и верификация Яндекс Бизнес и 2ГИС</li>
+                            <li>SEO-описание услуг, витрина товаров и прайс</li>
+                            <li>Оформление сообщества ВКонтакте под ключ</li>
+                            <li>Рекомендации по сбору отзывов для роста в ТОП</li>
+                        </ul>
                     </div>
-                    <div class="price" style="font-size: 22px; margin-bottom: 14px;">от 7 000 ₽</div>
-                    <button type="button" class="btn btn-dark btn-full" onclick="openModal('Заказ: Интеграция сайта и бота')">Подключить к сайту</button>
+                    <button type="button" class="btn btn-dark btn-full" onclick="openModal('Заказ: Упаковка Яндекс Карт, 2ГИС и ВК (от 10 000 ₽)')">Упаковать площадки</button>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Преимущества разработки бота на чистом коде</h2>
-            <p class="section-subtitle">В отличие от визуальных конструкторов ботов, наш код работает стабильно и не требует ежемесячной оплаты за каждого подписчика.</p>
-
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Экономия бюджета на дистанции</h3>
-                    <ul class="check-list" style="margin-bottom: 0;">
-                        <li>Никаких тарифов за количество пользователей в базе (хоть 100, хоть 50 000 человек)</li>
-                        <li>Исходный код бота полностью принадлежит вам</li>
-                        <li>Легко размещается на недорогом российском сервере</li>
-                        <li>Быстрый отклик без задержек даже при массовых рассылках</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3>Гибкий функционал под любую нишу</h3>
-                    <ul class="check-list" style="margin-bottom: 0;">
-                        <li>Проверка подписки на ваш Telegram-канал или группу ВК перед выдачей бонуса</li>
-                        <li>Удобная админ-панель для рассылки новостей и акций по всем клиентам</li>
-                        <li>Интеграция с Яндекс Картами, CRM-системами и таблицами</li>
-                        <li>Пошаговая инструкция по запуску и управлению после сдачи</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
                     <a href="index.html" class="logo" style="margin-bottom: 12px;">ВЕБ‑<span>КОД</span></a>
-                    <p>Создание сайтов на чистом коде без конструкторов, SEO-продвижение, Яндекс Директ и разработка чат-ботов.</p>
+                    <p>Студия веб-разработки и performance-маркетинга. Сайты на чистом коде от 15 000 ₽, Яндекс Директ, онлайн-оплата СБП и чат-боты под ключ.</p>
                 </div>
-
                 <div>
                     <h4>Разделы сайта</h4>
                     <a href="index.html">Главная</a>
@@ -137,23 +137,19 @@
                     <a href="direct.html">Яндекс Директ под ключ</a>
                     <a href="bots.html">Разработка чат-ботов</a>
                 </div>
-
                 <div>
                     <h4>Контакты для связи</h4>
                     <a href="tel:+79673888889">Тел: +7-967-388-88-89</a>
                     <a href="mailto:fixaxx2@mail.ru">Email: fixaxx2@mail.ru</a>
-                    <a href="https://t.me" target="_blank" rel="noopener">Личный Telegram: @nedurovv</a>
                     <a href="https://t.me" target="_blank" rel="noopener">Telegram-канал: @seo_and_code</a>
                 </div>
-
                 <div>
-                    <h4>Правовая информация</h4>
-                    <p>Самозанятый Козин Артём Игоревич</p>
-                    <p>ИНН: 254303011920</p>
+                    <h4>Юридическая информация</h4>
+                    <p>Исполнитель: плательщик НПД (самозанятый) Козин Артём Игоревич</p>
+                    <p>ИНН: 254303011920 (договор и чек)</p>
                     <a href="privacy.html" style="color: #F59E0B;">Политика конфиденциальности (152-ФЗ)</a>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <span>© 2026 Веб‑Код. Все права защищены.</span>
                 <span>Приморский край и вся Россия</span>
@@ -161,21 +157,45 @@
         </div>
     </footer>
 
+    <div class="chat-widget">
+        <div class="chat-widget-menu" id="chatWidgetMenu">
+            <div class="chat-widget-title">Связь 24/7 (работает в РФ)</div>
+            <button type="button" class="chat-widget-link" onclick="openModal('Быстрая заявка с виджета')">⚡ Оставить заявку онлайн</button>
+            <a href="tel:+79673888889" class="chat-widget-link">📞 Позвонить: +7-967-388-88-89</a>
+            <a href="mailto:fixaxx2@mail.ru" class="chat-widget-link">✉️ Написать на Email</a>
+        </div>
+        <button type="button" class="chat-widget-btn" onclick="toggleChatWidget()" aria-label="Связаться с нами">💬</button>
+    </div>
+
     <div class="modal" id="leadModal">
         <div class="modal-box">
-            <h3 id="modalTitle" style="font-size: 22px; margin-bottom: 8px;">Заказать чат-бота</h3>
-            <p style="color: #9CA3AF; font-size: 14px; margin-bottom: 18px;">Оставьте контакты — обсудим сценарий и стоимость разработки.</p>
+            <h3 id="modalTitle" style="font-size: 20px; margin-bottom: 6px; color: #FFFFFF;">Обсудить проект</h3>
+            <p style="color: #9CA3AF; font-size: 13.5px; margin-bottom: 16px;">Оставьте контакты — подготовим расчет и ответим выбранным способом.</p>
             <form onsubmit="submitLead(event)">
                 <input type="text" class="input" placeholder="Ваше имя" required>
-                <input type="tel" class="input" placeholder="+7 (___) ___-__-__" required>
+                <input type="tel" class="input" placeholder="Телефон или ник в мессенджере" required>
+                <select class="select" required>
+                    <option value="" disabled selected>Как с вами удобнее связаться?</option>
+                    <option value="Позвонить по телефону">Позвонить по телефону</option>
+                    <option value="Написать ВКонтакте">Написать ВКонтакте</option>
+                    <option value="Написать в Telegram">Написать в Telegram</option>
+                    <option value="Отправить расчет на Email">Отправить расчет на Email</option>
+                </select>
                 <label class="consent-label">
-                    <input type="checkbox" checked required>
-                    <span>Я согласен на обработку персональных данных в соответствии с 152-ФЗ и <a href="privacy.html">Политикой конфиденциальности</a>.</span>
+                    <input type="checkbox" required>
+                    <span>Я даю согласие на обработку персональных данных в соответствии с 152-ФЗ и <a href="privacy.html">Политикой конфиденциальности</a>.</span>
                 </label>
-                <button type="submit" class="btn btn-gold btn-full" style="margin-bottom: 10px;">Отправить заявку</button>
+                <button type="submit" class="btn btn-gold btn-full" style="margin-bottom: 8px;">Отправить заявку</button>
                 <button type="button" class="btn btn-dark btn-full" onclick="closeModal()">Закрыть</button>
             </form>
         </div>
     </div>
 
     <div class="cookie-bar" id="cookieBar">
+        <p>Мы используем cookie для работы сайта и аналитики. Продолжая, вы соглашаетесь с этим.</p>
+        <button type="button" class="btn btn-gold btn-cookie" onclick="acceptCookies()">Ок</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
