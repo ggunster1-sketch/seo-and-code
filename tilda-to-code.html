@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перенос сайта с Tilda и конструкторов на чистый код от 15 000 ₽ — Веб‑Код</title>
+    <meta name="description" content="Профессиональный перенос сайта с Tilda, Wix и других конструкторов на чистый HTML/CSS/JS код без абонентской платы. Ускорение загрузки до 0.4 сек, сохранение SEO-позиций, договор и чек НПД.">
+    <meta name="keywords" content="перенос сайта с тильды на чистый код, перенести сайт с tilda на хостинг, уйти с тильды без потери позиций, верстка сайта с тильды, Веб-Код">
+    <link rel="canonical" href="https://seo-and-code.ru">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t),k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document, 'script', 'https://yandex.ru' + '/metrika/tag.js?id=114677153', 'ym');
+
+        ym(114677153, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://yandex.ru/watch/114677153" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">ВЕБ‑<span>КОД</span></a>
+            <nav class="nav">
+                <a href="index.html">Главная</a>
+                <a href="sites.html">Сайты с нуля</a>
+                <a href="direct.html">Яндекс Директ</a>
+                <a href="bots.html">Чат-боты</a>
+                <a href="index.html#tariffs">Тарифы</a>
+                <a href="index.html#quiz">Расчет цены</a>
+            </nav>
+            <div class="header-contacts">
+                <a href="tel:+79673888889" class="header-phone">+7-967-388-88-89</a>
+                <button type="button" class="btn btn-gold btn-sm" onclick="openModal('Перенос сайта с конструктора')">Заказать звонок</button>
+                <button type="button" class="burger-btn" onclick="toggleMenu()" aria-label="Меню">☰</button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" onclick="toggleMenu()">Главная</a>
+            <a href="sites.html" onclick="toggleMenu()">Сайты с нуля</a>
+            <a href="direct.html" onclick="toggleMenu()">Яндекс Директ</a>
+            <a href="bots.html" onclick="toggleMenu()">Чат-боты</a>
+            <a href="index.html#quiz" onclick="toggleMenu()">Расчет стоимости</a>
+            <a href="tel:+79673888889" style="color: #F59E0B; font-weight: bold;">Позвонить: +7-967-388-88-89</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="hero-badge">Миграция без потери трафика и позиций</div>
+                <h1>Перенос сайта с <span>Tilda и конструкторов</span> на чистый код без абонплаты</h1>
+                <p class="hero-lead">Перестаньте ежегодно платить за подписку на конструктор. Переверстаем ваш действующий сайт в чистый, сверхбыстрый HTML/CSS/JS код за 3–5 дней с сохранением дизайна, SEO-позиций и подключением форм заявок.</p>
+                <div class="hero-actions">
+                    <button type="button" class="btn btn-gold" onclick="openModal('Оценка переноса сайта с Tilda')">Оценить перенос моего сайта</button>
+                    <a href="#migration-prices" class="btn btn-dark">Тарифы на перенос</a>
+                </div>
+            </div>
+            <div class="hero-showcase">
+                <div class="showcase-top">
+                    <div class="showcase-dots"><span></span><span></span><span></span></div>
+                    <span class="showcase-status">● Экономия до 45 000 ₽ за 3 года</span>
+                </div>
+                <div class="showcase-item">
+                    <span class="showcase-label">Ежегодный платеж за конструктор</span>
+                    <span class="showcase-val">0 ₽ навсегда</span>
+                </div>
+                <div class="showcase-item">
+                    <span class="showcase-label">Ускорение загрузки страниц</span>
+                    <span class="showcase-val">В 4–6 раз быстрее</span>
+                </div>
+                <div class="showcase-item">
+                    <span class="showcase-label">SEO-позиции и редиректы 301</span>
+                    <span class="showcase-val">100% сохранение</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="migration-prices" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Тарифы на перенос сайта на чистый код</h2>
+            <p class="section-subtitle">Разовая оплата без скрытых платежей. После завершения работы все исходные файлы полностью передаются вам.</p>
+            <div class="grid-3">
+                <div class="card">
+                    <div>
+                        <span class="card-num">01 / ОДНОСТРАНИЧНИК</span>
+                        <h3>Перенос лендинга</h3>
+                        <p>Переверстаем ваш лендинг с Tilda, Wix или другого конструктора в чистый код с сохранением дизайна.</p>
+                        <div class="price">от 15 000 ₽</div>
+                        <ul class="check-list">
+                            <li>Точное воспроизведение дизайна и блоков</li>
+                            <li>Полная адаптация под смартфоны и ПК</li>
+                            <li>Подключение форм заявок и аналитики</li>
+                            <li>Выгрузка на бесплатный или ваш хостинг</li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn btn-dark btn-full" onclick="openModal('Перенос лендинга с конструктора (от 15 000 ₽)')">Заказать перенос</button>
+                </div>
+
+                <div class="card tariff-featured">
+                    <div class="tariff-tag">Хит миграции</div>
+                    <div>
+                        <span class="card-num">02 / С SEO-ОПТИМИЗАЦИЕЙ</span>
+                        <h3>Перенос лендинга + Ускорение</h3>
+                        <p>Перенос на чистый код с полной чисткой скриптов, микроразметкой и сохранением позиций в поиске.</p>
+                        <div class="price">от 22 000 ₽</div>
+                        <ul class="check-list">
+                            <li>Ускорение загрузки до 0.4 сек (95+ баллов)</li>
+                            <li>Сохранение всех URL, заголовков и мета-тегов</li>
+                            <li>Внедрение микроразметки Schema.org</li>
+                            <li>Подключение онлайн-оплаты СБП и виджета 24/7</li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn btn-gold btn-full" onclick="openModal('Перенос + Ускорение и SEO (от 22 000 ₽)')">Заказать с ускорением</button>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-num">03 / МНОГОСТРАНИЧНИК</span>
+                        <h3>Перенос сайта компании</h3>
+                        <p>Миграция многостраничного сайта (до 10–15 страниц) со сложной структурой и каталогом услуг.</p>
+                        <div class="price">от 35 000 ₽</div>
+                        <ul class="check-list">
+                            <li>Перенос всех страниц и внутренней перелинковки</li>
+                            <li>Настройка 301-редиректов без просадки SEO</li>
+                            <li>Формирование новых sitemap.xml и robots.txt</li>
+                            <li>Интеграция заявок с CRM-системой</li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn btn-dark btn-full" onclick="openModal('Перенос многостраничного сайта (от 35 000 ₽)')">Оценить многостраничник</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Как проходит перенос без остановки продаж</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <span class="card-num">ШАГ 01</span>
+                    <h3>Аудит и фиксация сметы</h3>
+                    <p>Изучаем ваш текущий сайт на конструкторе, проверяем все формы, интеграции и SEO-теги, фиксируем точную цену в договоре.</p>
+                </div>
+                <div class="card">
+                    <span class="card-num">ШАГ 02</span>
+                    <h3>Чистая верстка на тестовом адресе</h3>
+                    <p>Ваш старый сайт продолжает работать и принимать заявки, пока мы собираем его быструю копию на чистом HTML/CSS/JS.</p>
+                </div>
+                <div class="card">
+                    <span class="card-num">ШАГ 03</span>
+                    <h3>Переключение домена за 15 минут</h3>
+                    <p>Проверяете готовый сайт, мы переключаем DNS вашего домена на новый хостинг, подключаем SSL и Яндекс Метрику.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+document.addEventListener("DOMContentLoaded", function () {
+    if (!document.getElementById("leadModal")) {
+        var btns = document.querySelectorAll("[onclick^='openModal']");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].setAttribute("onclick", "window.location.href='index.html#quiz'");
+        }
+    }
+});
